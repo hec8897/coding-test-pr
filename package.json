@@ -1,0 +1,22 @@
+{
+  "name": "coding-test-pr",
+  "version": "1.0.0",
+  "description": "코딩 테스트 연습 & 취업 준비",
+  "main": "index.js",
+  "scripts": {
+    "test": "ts-node",
+    "build": "tsc"
+  },
+  "keywords": [
+    "algorithm",
+    "coding-test",
+    "typescript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "ts-node": "^10.0.0"
+  }
+}
