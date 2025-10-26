@@ -14,8 +14,6 @@
 function solution(str: string): string {
   // 여기에 코드를 작성하세요!
   // 힌트: 문자열 → 배열 → 변환 → 문자열
-
-  return "";
 }
 
 // 테스트 케이스
