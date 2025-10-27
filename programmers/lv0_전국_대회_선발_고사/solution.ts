@@ -16,9 +16,9 @@
 function solution(rank: number[], attendance: boolean[]): number {
   const [a, b, c] = rank
     .map((ranking, idx) => ({ ranking, idx }))
-    .filter(student => attendance[student.idx])
+    .filter((student) => attendance[student.idx])
     .sort((x, y) => x.ranking - y.ranking)
-    .map(student => student.idx);
+    .map((student) => student.idx);
 
   return 10000 * a + 100 * b + c;
 }
@@ -32,5 +32,3 @@ console.log(solution([1, 2, 3], [true, true, true])); // 102
 console.log(
   solution([6, 1, 5, 2, 3, 4], [true, false, true, false, false, true])
 ); // 50200
-
-

@@ -47,13 +47,16 @@ attendance = [false, true, true, true, true, false, false]
 ## 접근 방법
 
 1. **학생 번호와 등수를 함께 저장**
+
    - `map((ranking, idx) => ({ ranking, idx }))`
    - 인덱스가 학생 번호!
 
 2. **참석 가능한 학생만 필터링**
+
    - `filter(student => attendance[student.idx])`
 
 3. **등수 기준 오름차순 정렬**
+
    - `sort((a, b) => a.ranking - b.ranking)`
    - 1등, 2등, 3등 순서로!
 
@@ -74,9 +77,9 @@ attendance = [false, true, true, true, true, false, false]
 function solution(rank: number[], attendance: boolean[]): number {
   const [a, b, c] = rank
     .map((ranking, idx) => ({ ranking, idx }))
-    .filter(student => attendance[student.idx])
+    .filter((student) => attendance[student.idx])
     .sort((x, y) => x.ranking - y.ranking)
-    .map(student => student.idx);
+    .map((student) => student.idx);
 
   return 10000 * a + 100 * b + c;
 }
@@ -101,16 +104,16 @@ function solution(rank: number[], attendance: boolean[]): number {
 ```typescript
 function solution(rank: number[], attendance: boolean[]): number {
   const candidates = [];
-  
+
   for (let i = 0; i < rank.length; i++) {
     if (attendance[i]) {
       candidates.push({ ranking: rank[i], idx: i });
     }
   }
-  
+
   candidates.sort((a, b) => a.ranking - b.ranking);
-  
-  const [a, b, c] = candidates.map(s => s.idx);
+
+  const [a, b, c] = candidates.map((s) => s.idx);
   return 10000 * a + 100 * b + c;
 }
 ```
@@ -134,6 +137,7 @@ function solution(rank: number[], attendance: boolean[]): number {
 ### 2. **`.sort()` 사용법 완벽 정리** ⭐⭐⭐
 
 #### 숫자 정렬:
+
 ```typescript
 // 오름차순 (작은 것 → 큰 것)
 array.sort((a, b) => a - b);
@@ -143,6 +147,7 @@ array.sort((a, b) => b - a);
 ```
 
 #### 문자열 정렬:
+
 ```typescript
 // 오름차순 (가나다순, 알파벳순)
 array.sort((a, b) => a.localeCompare(b));
@@ -152,6 +157,7 @@ array.sort((a, b) => b.localeCompare(a));
 ```
 
 #### 객체 정렬:
+
 ```typescript
 // 특정 속성 기준
 array.sort((a, b) => a.속성 - b.속성);
@@ -164,18 +170,21 @@ array.sort((a, b) => a.속성 - b.속성);
 ### 3. **구조분해 할당으로 코드 간결화** ⭐
 
 #### Before:
+
 ```typescript
 const candidates = rank.map(...).filter(...).sort(...).map(...);
 return 10000 * candidates[0] + 100 * candidates[1] + candidates[2];
 ```
 
 #### After:
+
 ```typescript
 const [a, b, c] = rank.map(...).filter(...).sort(...).map(...);
 return 10000 * a + 100 * b + c;
 ```
 
 **장점:**
+
 - 변수명이 의미 있음 (`a`, `b`, `c`)
 - return 문이 훨씬 깔끔!
 
@@ -199,10 +208,10 @@ rank
 
 ```typescript
 // ❌ 나쁜 예 (파라미터와 외부 변수 충돌)
-rank.map((rank, idx) => ({ rank, idx }))
+rank.map((rank, idx) => ({ rank, idx }));
 
 // ✅ 좋은 예 (명확한 변수명)
-rank.map((ranking, idx) => ({ ranking, idx }))
+rank.map((ranking, idx) => ({ ranking, idx }));
 ```
 
 ## 관련 개념

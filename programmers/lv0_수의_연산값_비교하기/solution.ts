@@ -31,3 +31,5 @@ console.log("\n=== 추가 테스트 ===");
 console.log(solution(5, 5)); // 50 (55 > 50인지, 50 > 55인지)
 console.log(solution(10, 5)); // 105 or 100?
 console.log(solution(1, 1)); // 11 or 2?
+
+
