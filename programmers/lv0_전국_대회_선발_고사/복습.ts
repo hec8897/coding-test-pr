@@ -14,6 +14,16 @@
 
 function solution(rank: number[], attendance: boolean[]): number {
   // 여기에 코드를 작성하세요!
+
+  const [a, b, c] = rank
+    .map((ranking, stNumber) => {
+      return { ranking, stNumber };
+    })
+    .filter((_, index) => attendance[index]) // attendence 에서 true 인 순서만 가져옴
+    .sort((a, b) => a.ranking - b.ranking)
+    .map(({ stNumber }) => stNumber);
+
+  return 10000 * a + 100 * b + c;
 }
 
 // 테스트 케이스
@@ -24,5 +34,3 @@ console.log(solution([1, 2, 3], [true, true, true])); // 102
 console.log(
   solution([6, 1, 5, 2, 3, 4], [true, false, true, false, false, true])
 ); // 50200
-
-
