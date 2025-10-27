@@ -12,8 +12,15 @@ const regex = /^(aya|ye|woo|ma)+$/;
 
 function solution(babbling: string[]): number {
   // 여기에 코드를 작성하세요!
+  // 힌트: 정규표현식으로 문자열 전체가 패턴과 일치하는지 확인
+  let count = 0;
+  for (let word of babbling) {
+    if (regex.test(word)) {
+      count++;
+    }
+  }
 
-  return 0;
+  return count;
 }
 
 // 테스트 케이스

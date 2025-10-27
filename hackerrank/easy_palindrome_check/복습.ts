@@ -6,8 +6,15 @@
  * 대소문자 구분 없이 팰린드롬인지 확인하세요.
  */
 
+const regex = /[^a-zA-Z]/g;
+
 function isPalindrome(s: string): boolean {
   // 여기에 코드를 작성하세요!
+  const str = s.replace(regex, "").toLocaleLowerCase();
+
+  if (str === str.split("").reverse().join("")) {
+    return true;
+  }
 
   return false;
 }
@@ -16,5 +23,5 @@ function isPalindrome(s: string): boolean {
 console.log(isPalindrome("racecar")); // true
 console.log(isPalindrome("A man, a plan, a canal: Panama")); // true
 console.log(isPalindrome("hello")); // false
-console.log(isPalindrome("Madam")); // true
-console.log(isPalindrome("race a car")); // false
+console.log(isPalindrome("Mad123am!")); // true
+console.log(isPalindrome("race! a car")); // false

@@ -133,19 +133,20 @@ Step 6: ')' → pop '(', 짝 확인 ✅ → []
 ### 개선 포인트
 
 **현재 코드:**
+
 ```typescript
 if (char === "(" || char === "[" || char === "{")
 ```
 
 **개선된 코드 (Set 사용):**
+
 ```typescript
-const openBrackets = new Set(['(', '[', '{']);
-const closeBrackets = new Set([')', ']', '}']);
+const openBrackets = new Set(["(", "[", "{"]);
+const closeBrackets = new Set([")", "]", "}"]);
 
 if (openBrackets.has(char)) {
   stack.push(char);
-}
-else if (closeBrackets.has(char)) {
+} else if (closeBrackets.has(char)) {
   // ...
 }
 ```
@@ -164,21 +165,24 @@ else if (closeBrackets.has(char)) {
 ### 2. 짝 맞추기 패턴
 
 **객체로 매핑:**
+
 ```typescript
 const pairs = {
-  ")": "(",  // 닫는 괄호 → 여는 괄호
+  ")": "(", // 닫는 괄호 → 여는 괄호
   "]": "[",
-  "}": "{"
+  "}": "{",
 };
 ```
 
 **왜 이 방향?**
+
 - 닫는 괄호를 만났을 때 "어떤 여는 괄호와 짝인지" 찾기 위해
 - `pairs[')']` → `'('` 빠르게 확인!
 
 ### 3. 중요한 실수들
 
 **실수 1: 짝이 맞으면 바로 return**
+
 ```typescript
 ❌ if (top === pairs[char]) {
      return 1;  // 첫 괄호만 맞으면 끝!
@@ -191,6 +195,7 @@ const pairs = {
 ```
 
 **실수 2: 마지막 return 누락**
+
 ```typescript
 ❌ }  // 함수 끝 (return 없음!)
 
@@ -198,6 +203,7 @@ const pairs = {
 ```
 
 **실수 3: pairs 잘못 사용**
+
 ```typescript
 ❌ if (top !== pairs[top])  // top으로 찾기
 ✅ if (top !== pairs[char])  // char로 찾기
@@ -213,6 +219,7 @@ const pairs = {
 ### 5. 실전 활용
 
 **이 패턴이 쓰이는 곳:**
+
 - 코드 에디터의 괄호 검증
 - 컴파일러의 문법 검사
 - HTML/XML 태그 검증
@@ -221,6 +228,7 @@ const pairs = {
 ### 6. 알고리즘 패턴
 
 **"짝 맞추기 + 순서 보장" → 스택 사용!**
+
 - 여는 것: push
 - 닫는 것: pop + 확인
 - 마지막에: 스택이 비었는지 확인
