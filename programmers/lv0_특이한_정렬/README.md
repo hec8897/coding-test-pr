@@ -9,13 +9,13 @@
 ```typescript
 function solution(numlist: number[], n: number): number[] {
   return numlist.sort((a, b) => {
-    const distA = Math.abs(a - n);  // a와 n의 거리
-    const distB = Math.abs(b - n);  // b와 n의 거리
+    const distA = Math.abs(a - n); // a와 n의 거리
+    const distB = Math.abs(b - n); // b와 n의 거리
 
     if (distA !== distB) {
-      return distA - distB;  // 거리가 다르면 → 가까운게 앞으로
+      return distA - distB; // 거리가 다르면 → 가까운게 앞으로
     }
-    return b - a;  // 거리가 같으면 → 큰 수가 앞으로
+    return b - a; // 거리가 같으면 → 큰 수가 앞으로
   });
 }
 ```
@@ -23,6 +23,7 @@ function solution(numlist: number[], n: number): number[] {
 ## ⭐️ 핵심 개념: sort() 함수 이해하기
 
 ### 1. sort() 기본 원리
+
 ```typescript
 array.sort((a, b) => {
   // 반환값이:
@@ -33,6 +34,7 @@ array.sort((a, b) => {
 ```
 
 ### 2. sort()의 a, b는 무엇?
+
 - 배열에서 두 개씩 순서대로 비교하는 값
 - 최소/최대값이 아님!
 - 정렬 과정에서 계속 바뀜
@@ -46,6 +48,7 @@ array.sort((a, b) => {
 ```
 
 ### 3. Math.abs() 사용 이유
+
 ```typescript
 // n = 4일 때
 3과의 거리 = |3-4| = |-1| = 1
@@ -60,6 +63,7 @@ array.sort((a, b) => {
 ## 🌟 예제 분석
 
 ### 예제 1
+
 ```typescript
 입력: numlist=[1, 2, 3, 4, 5, 6], n=4
 
@@ -75,6 +79,7 @@ array.sort((a, b) => {
 ```
 
 ### 예제 2
+
 ```typescript
 입력: numlist=[10000,20,36,47,40,6,10,7000], n=30
 
@@ -93,10 +98,12 @@ array.sort((a, b) => {
 ## 배운 점
 
 1. sort() 함수의 동작 방식
+
    - 비교 함수의 반환값으로 정렬
    - 여러 기준으로 정렬할 때는 if문으로 분기
 
 2. Math.abs()의 활용
+
    - 거리 계산할 때는 방향 상관없이 절대값으로!
 
 3. 다중 정렬 기준 적용하기
