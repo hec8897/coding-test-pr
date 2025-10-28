@@ -44,6 +44,7 @@ coding-test-pr/
 | 특이한 정렬            | Lv.0 | ⬜   | [📁](./programmers/lv0_특이한_정렬)            | sort, 절대값, 다중정렬 ⭐⭐     |
 | K번째수                | Lv.1 | ⬜   | [📁](./programmers/lv1_k번째수)                | slice, sort, 체이닝 ⭐          |
 | 모의고사               | Lv.1 | ⬜   | [📁](./programmers/lv1_모의고사)               | 패턴, 나머지연산 ⭐⭐           |
+| 체육복                 | Lv.1 | ⬜   | [📁](./programmers/lv1_체육복)                 | 그리디, 배열상태관리 ⭐⭐       |
 
 ### 해커랭크
 
