@@ -34,3 +34,5 @@ console.log(solution([1, 2, 3], [true, true, true])); // 102
 console.log(
   solution([6, 1, 5, 2, 3, 4], [true, false, true, false, false, true])
 ); // 50200
+
+
