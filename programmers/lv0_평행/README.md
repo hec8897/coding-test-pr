@@ -120,6 +120,7 @@ function solution(dots: number[][]): number {
 **의미:** `기울기 = 위아래 변화 ÷ 좌우 변화`
 
 **예시:** A(1, 2)와 B(3, 4)
+
 ```
      4 •B
      3
@@ -149,6 +150,7 @@ function solution(dots: number[][]): number {
 ```
 
 **코드로:**
+
 ```typescript
 slope1 === slope2; // 기울기가 같다 = 평행!
 ```
