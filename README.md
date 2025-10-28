@@ -45,7 +45,7 @@ coding-test-pr/
 | K번째수                | Lv.1 | ⬜   | [📁](./programmers/lv1_k번째수)                | slice, sort, 체이닝 ⭐          |
 | 모의고사               | Lv.1 | ⬜   | [📁](./programmers/lv1_모의고사)               | 패턴, 나머지연산 ⭐⭐           |
 | 체육복                 | Lv.1 | ⬜   | [📁](./programmers/lv1_체육복)                 | 그리디, 배열상태관리 ⭐⭐       |
-| 폰켓몬                 | Lv.1 | ⬜   | [📁](./programmers/lv1_폰켓몬)                 | Set, 중복제거 ⭐               |
+| 폰켓몬                 | Lv.1 | ⬜   | [📁](./programmers/lv1_폰켓몬)                 | Set, 중복제거 ⭐                |
 
 ### 해커랭크
 
