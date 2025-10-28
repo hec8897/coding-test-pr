@@ -42,7 +42,8 @@ coding-test-pr/
 | 다음에 올 숫자         | Lv.0 | ⬜   | [📁](./programmers/lv0_다음에_올_숫자)         | 등차수열, 등비수열 ⭐⭐         |
 | 최빈값 구하기          | Lv.0 | ⬜   | [📁](./programmers/lv0_최빈값_구하기)          | 빈도수 카운팅, Object ⭐⭐⭐    |
 | 특이한 정렬            | Lv.0 | ⬜   | [📁](./programmers/lv0_특이한_정렬)            | sort, 절대값, 다중정렬 ⭐⭐     |
-| K번째수               | Lv.1 | ⬜   | [📁](./programmers/lv1_k번째수)               | slice, sort, 체이닝 ⭐        |
+| K번째수                | Lv.1 | ⬜   | [📁](./programmers/lv1_k번째수)                | slice, sort, 체이닝 ⭐          |
+| 모의고사                | Lv.1 | ⬜   | [📁](./programmers/lv1_모의고사)                | 패턴, 나머지연산 ⭐⭐           |
 
 ### 해커랭크
 
