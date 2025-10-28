@@ -76,7 +76,7 @@
 function solution(array: number[]): number {
   // 1단계: 빈도수 세기
   const count: Record<number, number> = {};
-  
+
   for (let num of array) {
     if (count[num]) {
       count[num] = count[num] + 1;
@@ -84,18 +84,18 @@ function solution(array: number[]): number {
       count[num] = 1;
     }
   }
-  
+
   // 더 간결한 방법:
   // count[num] = (count[num] || 0) + 1;
-  
+
   // 2단계: 최대 빈도수 찾기
   const maxCount = Math.max(...Object.values(count));
-  
+
   // 3단계: 최빈값 찾기
   const result = Object.keys(count).filter(
     (key) => count[Number(key)] === maxCount
   );
-  
+
   return result.length === 1 ? Number(result[0]) : -1;
 }
 ```
@@ -111,6 +111,7 @@ const count: { [key: number]: number } = {};
 ```
 
 **의미:**
+
 - key: number 타입
 - value: number 타입
 
@@ -119,20 +120,23 @@ const count: { [key: number]: number } = {};
 ### 2. 빈도수 카운팅 패턴
 
 #### 방법 1: if-else 사용
+
 ```typescript
 if (count[num]) {
-  count[num] = count[num] + 1;  // 이미 있으면 +1
+  count[num] = count[num] + 1; // 이미 있으면 +1
 } else {
-  count[num] = 1;  // 처음 나오면 1
+  count[num] = 1; // 처음 나오면 1
 }
 ```
 
 #### 방법 2: OR 연산자 (추천!)
+
 ```typescript
 count[num] = (count[num] || 0) + 1;
 ```
 
 **동작 원리:**
+
 - `count[num]`이 있으면 → 그 값 + 1
 - `count[num]`이 없으면 → 0 + 1 = 1
 
@@ -141,21 +145,24 @@ count[num] = (count[num] || 0) + 1;
 ### 3. Object 메서드들
 
 #### `Object.keys()` - 키 배열로 변환
+
 ```typescript
-count = { 1: 1, 2: 1, 3: 3, 4: 1 }
-Object.keys(count)
+count = { 1: 1, 2: 1, 3: 3, 4: 1 };
+Object.keys(count);
 // → ['1', '2', '3', '4']  (배열!)
 ```
 
 #### `Object.values()` - 값 배열로 변환
+
 ```typescript
-Object.values(count)
+Object.values(count);
 // → [1, 1, 3, 1]  (배열!)
 ```
 
 #### `Object.entries()` - 키-값 쌍 배열로 변환
+
 ```typescript
-Object.entries(count)
+Object.entries(count);
 // → [['1', 1], ['2', 1], ['3', 3], ['4', 1]]
 ```
 
@@ -167,11 +174,11 @@ Object.entries(count)
 ### 4. Math.max() 사용
 
 ```typescript
-Math.max(1, 2, 3, 4, 5)  // → 5
+Math.max(1, 2, 3, 4, 5); // → 5
 
 // 배열의 최댓값
 const arr = [1, 2, 3, 4, 5];
-Math.max(...arr)  // → 5 (스프레드 연산자!)
+Math.max(...arr); // → 5 (스프레드 연산자!)
 ```
 
 ---
@@ -179,20 +186,21 @@ Math.max(...arr)  // → 5 (스프레드 연산자!)
 ### 5. 다른 풀이 방법
 
 #### Object.entries() 사용 (더 깔끔!)
+
 ```typescript
 function solution(array: number[]): number {
   const count: Record<number, number> = {};
-  
+
   for (let num of array) {
     count[num] = (count[num] || 0) + 1;
   }
-  
+
   const maxCount = Math.max(...Object.values(count));
-  
+
   const result = Object.entries(count)
     .filter(([key, value]) => value === maxCount)
     .map(([key]) => Number(key));
-  
+
   return result.length === 1 ? result[0] : -1;
 }
 ```
@@ -204,18 +212,22 @@ function solution(array: number[]): number {
 ## 배운 점 / 느낀 점
 
 ### 1. TypeScript 타입 에러 해결
+
 - 객체 사용 시 타입 선언 필수!
 - `Record<K, V>` 또는 `{ [key: K]: V }` 사용
 
 ### 2. 빈도수 카운팅은 자주 나오는 패턴
+
 - `count[num] = (count[num] || 0) + 1` 암기!
 - Object나 Map으로 빈도수 관리
 
 ### 3. Object vs 배열
+
 - 객체는 배열 메서드 사용 불가
 - `Object.keys()`, `Object.values()`, `Object.entries()`로 배열 변환
 
 ### 4. 단계별로 풀면 쉽다!
+
 1. 빈도수 세기
 2. 최댓값 찾기
 3. 최빈값 찾기
