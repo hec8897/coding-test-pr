@@ -48,6 +48,7 @@ coding-test-pr/
 | 폰켓몬                 | Lv.1 | ⬜   | [📁](./programmers/lv1_폰켓몬)                 | Set, 중복제거 ⭐                |
 | 같은 숫자는 싫어       | Lv.1 | ⬜   | [📁](./programmers/lv1_같은_숫자는_싫어)       | 스택, filter ⭐⭐               |
 | 기능개발               | Lv.2 | ⬜   | [📁](./programmers/lv2_기능개발)               | 큐, 그룹화 ⭐⭐⭐               |
+| 올바른 괄호            | Lv.2 | ⬜   | [📁](./programmers/lv2_올바른_괄호)            | 스택, 짝맞추기 ⭐⭐             |
 
 ### 해커랭크
 
