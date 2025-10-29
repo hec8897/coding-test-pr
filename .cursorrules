@@ -1,0 +1,211 @@
+# Cursor Rules for Coding Test Practice Repository
+
+## 🎯 Repository Purpose
+This is a TypeScript-based coding test practice repository for job preparation.
+The user solves algorithm problems daily and maintains a learning journal.
+
+## 📋 Git Commit Rules (CRITICAL - ALWAYS ENFORCE)
+
+### ✅ MANDATORY: README.md Update Before Every Commit
+**BEFORE CREATING ANY COMMIT, YOU MUST:**
+
+1. **Always ask the user if they want to update README.md**
+2. **Check what needs to be updated:**
+   - Total solved problems count (`총 풀이 문제: XX개`)
+   - Consecutive study days (`현재 연속 학습일: X일 🔥`)
+   - Problem list table (add new problem or update review checkbox ⬜ → ✅)
+   - Recent learning history (`최근 학습 내역`)
+3. **Offer to update README.md automatically**
+4. **Never proceed with commit without README.md being staged**
+
+### Commit Message Format
+```
+[type] brief description
+
+- detailed content (optional)
+```
+
+### Commit Types
+| Type | Description | Example |
+|------|-------------|---------|
+| `[solve]` | New problem solution | `[solve] Programmers lv1 Two Numbers Sum` |
+| `[review]` | Review existing problem | `[review] lv0 Case Conversion 2nd review` |
+| `[refactor]` | Code refactoring | `[refactor] Improve regex in babbling problem` |
+| `[docs]` | Documentation | `[docs] Stack data structure notes` |
+| `[chore]` | Maintenance | `[chore] Update tsconfig` |
+| `[fix]` | Bug fix | `[fix] Edge case in parallel problem` |
+| `[add]` | Add new files/folders | `[add] Algorithm template` |
+
+## 🔄 Workflow When User Solves a Problem
+
+### 1. After User Solves a Problem:
+```
+AI: "새 문제를 푸셨네요! 커밋하기 전에 README.md를 업데이트하겠습니다.
+
+업데이트할 항목:
+- 총 풀이 문제: 20개 → 21개
+- 문제 리스트에 새 문제 추가
+- 최근 학습 내역 업데이트
+
+README.md를 업데이트하고 커밋할까요? (y/n)"
+```
+
+### 2. README.md Update Steps:
+- Read current README.md
+- Calculate new problem count
+- Add problem to the appropriate table (Programmers/Baekjoon/LeetCode/HackerRank)
+- Update recent learning history
+- Show diff to user for confirmation
+
+### 3. Commit Process:
+```bash
+git add .
+git commit -m "[solve] Problem Name
+
+- Key concepts
+- README.md updated (total XX problems)"
+```
+
+## 🔄 Workflow When User Reviews a Problem
+
+### 1. After User Reviews:
+```
+AI: "복습을 완료하셨네요! README.md의 복습 체크박스를 업데이트하겠습니다.
+
+업데이트할 항목:
+- [문제명] 복습 체크박스: ⬜ → ✅
+
+README.md를 업데이트하고 커밋할까요? (y/n)"
+```
+
+### 2. Commit Message:
+```
+[review] Problem Name Review
+
+- What was learned or improved
+- README.md review checkbox updated
+```
+
+## 📁 Project Structure
+
+```
+coding-test-pr/
+├── programmers/      # Programmers problems
+│   └── lv0_problem_name/
+│       ├── README.md      # Problem description
+│       ├── solution.ts    # Initial solution
+│       ├── 복습.ts         # 1st review
+│       └── 복습2.ts        # 2nd review
+├── baekjoon/         # Baekjoon problems
+├── leetcode/         # LeetCode problems
+├── hackerrank/       # HackerRank problems
+├── algorithms/       # Algorithm notes
+├── data-structures/  # Data structure notes
+├── notes/            # Learning notes
+└── daily-logs/       # Daily learning journal
+```
+
+## 💡 Problem Solving Workflow
+
+### When Creating New Problem Solution:
+1. Create folder: `{platform}/{level}_{problem_name}/`
+2. Create files:
+   - `README.md` - Problem description, approach, time/space complexity
+   - `solution.ts` - Solution code with comments
+3. **Update README.md** (main repository README)
+4. Commit with `[solve]` type
+
+### When Reviewing Problem:
+1. Create `복습.ts` or `복습2.ts` in problem folder
+2. **Update README.md** review checkbox
+3. Commit with `[review]` type
+
+## 🚫 Important Don'ts
+
+- ❌ **NEVER commit without updating README.md** (unless it's a pure docs/chore commit)
+- ❌ Never use generic commit messages like "solve problem" or "update"
+- ❌ Never skip the commit type prefix `[type]`
+- ❌ Never forget to update problem count and recent learning history
+
+## 🎯 AI Assistant Behavior
+
+### Always Proactively:
+1. **Remind about README.md update before commits**
+2. **Offer to update README.md automatically**
+3. **Suggest proper commit message format**
+4. **Calculate new problem counts**
+5. **Update consecutive study days if it's a new day**
+
+### When User Says "커밋해줘" or "commit":
+```
+Step 1: Check if README.md needs update
+Step 2: If yes, show what needs to be updated
+Step 3: Update README.md (with user confirmation)
+Step 4: Stage all files including README.md
+Step 5: Create commit with proper format
+Step 6: Offer to push
+```
+
+### Response Template:
+```
+커밋 준비를 시작하겠습니다! 📝
+
+✅ 변경된 파일:
+- {list of changed files}
+
+⚠️ README.md 업데이트 필요:
+- 총 문제 수: X → Y
+- 문제 리스트: {problem name} 추가
+- 최근 학습 내역 업데이트
+
+README.md를 자동으로 업데이트하고 커밋할까요?
+```
+
+## 📊 README.md Update Rules
+
+### Problem Count Update:
+- Current: `- 총 풀이 문제: 20개+`
+- Update to actual count when new problem is solved
+
+### Consecutive Days Update:
+- Current: `- 현재 연속 학습일: 5일 🔥🔥🔥🔥🔥`
+- Add 🔥 emoji for each day
+- Reset if a day is skipped
+
+### Problem List Table:
+- Add new row when problem is solved
+- Update review checkbox when review is completed
+- Keep difficulty stars (⭐) as user indicates
+
+### Recent Learning History:
+- Add entry when it's a new day
+- Update the "latest" section with today's accomplishments
+
+## 🔧 Technical Details
+
+### TypeScript Environment:
+- Use TypeScript for all solutions
+- Include type annotations
+- Use modern ES6+ syntax
+
+### Code Quality:
+- Write clean, readable code
+- Add meaningful comments
+- Include time/space complexity analysis in README.md
+
+### Testing:
+- Include test cases in problem README.md
+- Verify solution works before committing
+
+## 🎯 Summary: Core Rule
+
+**The #1 Rule: README.md MUST be updated and staged before ANY commit involving problem solving or review.**
+
+When user asks to commit:
+1. Check README.md status
+2. Update if needed
+3. Only then proceed with commit
+4. Use proper commit message format
+
+This ensures the learning journal is always up-to-date and the progress is tracked accurately.
+

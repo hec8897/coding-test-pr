@@ -137,3 +137,16 @@ tsc --init
 - 테스트 케이스를 직접 만들어보기
 - 풀이 후 다른 사람의 코드 참고하기
 - 같은 문제를 일정 시간 후에 다시 풀어보기
+
+## 📜 Git Commit Rules
+
+이 저장소는 일관된 커밋 규칙을 따릅니다. 상세한 내용은 [COMMIT_RULES.md](./COMMIT_RULES.md)를 참고하세요!
+
+### 간단 요약
+
+- **필수**: 모든 커밋 전 README.md 업데이트
+- **형식**: `[타입] 설명` (예: `[solve] 프로그래머스 lv1 문제명`)
+- **타입**: solve, review, refactor, docs, chore, fix, add
+- **자동화**:
+  - Pre-commit Hook: README.md 업데이트 확인
+  - Cursor Rules (`.cursorrules`): AI가 자동으로 README.md 업데이트 및 커밋 도움
