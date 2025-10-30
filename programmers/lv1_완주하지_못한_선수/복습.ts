@@ -1,23 +1,23 @@
 function solution(participant: string[], completion: string[]): string {
   const map = new Map();
+  let answer = "";
 
-  for (let runner of participant) {
-    map.set(runner, (map.get(runner) || 0) + 1);
+  for (let name of participant) {
+    map.set(name, (map.get(name) || 0) + 1);
+    // 동명이인 유저 카운트를 위한 map 생성
   }
 
-  for (let runner of completion) {
-    map.set(runner, (map.get(runner) || 0) - 1);
+  for (let name of completion) {
+    map.set(name, map.get(name) - 1); // 완주자가 있을때마다 -1
   }
 
-  const answer = [];
-
-  for (let [runner, count] of map) {
+  for (const [name, count] of map) {
     if (count > 0) {
-      answer.push(runner);
+      answer = name;
     }
   }
 
-  return answer.join("");
+  return answer;
 }
 
 // 테스트
