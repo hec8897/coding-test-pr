@@ -22,7 +22,11 @@ function solution(number: string, k: number): string {
   let removeCount = 0;
 
   for (const num of number) {
-    while (stack.length > 0 && removeCount < k && stack[stack.length] < num) {
+    while (
+      stack.length > 0 &&
+      removeCount < k &&
+      stack[stack.length - 1] < num
+    ) {
       stack.pop();
       removeCount++;
     }
