@@ -1,15 +1,17 @@
 function solution(progresses: number[], speeds: number[]): number[] {
-  const days = [];
+  const days: number[] = [];
   for (let i = 0; i < progresses.length; i++) {
-    days.push(Math.ceil((100 - progresses[i]) / speeds[i]));
+    const ramainingDays = Math.ceil((100 - progresses[i]) / speeds[i]);
+    // 남은날 계산
+    days.push(ramainingDays);
   }
 
-  let count = 1;
+  const answer: number[] = [];
   let currentDay = days[0];
-  const answer = [];
+  let count = 1;
 
   for (let i = 1; i < days.length; i++) {
-    if (days[i] <= currentDay) {
+    if (currentDay >= days[i]) {
       count++;
     } else {
       answer.push(count);
@@ -19,10 +21,11 @@ function solution(progresses: number[], speeds: number[]): number[] {
   }
 
   answer.push(count);
-
   return answer;
 }
 
 // 테스트
 console.log(solution([93, 30, 55], [1, 30, 5])); // [2, 1]
 console.log(solution([95, 90, 99, 99, 80, 99], [1, 1, 1, 1, 1, 1])); // [1, 3, 2]
+
+export default solution;

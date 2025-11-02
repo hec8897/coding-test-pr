@@ -47,7 +47,7 @@ coding-test-pr/
 | 체육복                 | Lv.1            | ✅   | [📁](./programmers/lv1_체육복)                 | 그리디, 배열상태관리 ⭐⭐               |
 | 폰켓몬                 | Lv.1            | ✅   | [📁](./programmers/lv1_폰켓몬)                 | Set, 중복제거 ⭐                        |
 | 같은 숫자는 싫어       | Lv.1            | ✅   | [📁](./programmers/lv1_같은_숫자는_싫어)       | 스택, filter ⭐⭐                       |
-| 기능개발               | Lv.2            | ⬜   | [📁](./programmers/lv2_기능개발)               | 큐, 그룹화 ⭐⭐⭐                       |
+| 기능개발               | Lv.2            | ✅   | [📁](./programmers/lv2_기능개발)               | 큐, 그룹화 ⭐⭐⭐                       |
 | 올바른 괄호            | Lv.2            | ⬜   | [📁](./programmers/lv2_올바른_괄호)            | 스택, 짝맞추기 ⭐⭐                     |
 | 타겟 넘버              | Lv.2            | ✅   | [📁](./programmers/lv2_타겟_넘버)              | DFS, 재귀, 완전탐색 ⭐⭐⭐              |
 | 가장 큰 수             | Lv.2            | ✅   | [📁](./programmers/lv2_가장_큰_수)             | 정렬, 문자열, 커스텀 비교 ⭐⭐⭐        |
