@@ -204,26 +204,26 @@ function solution(number: string, k: number): string {
  *      → 뒤에서 k개 제거
  *
  * 6️⃣ 예시: "1924", k = 2
- *    
+ *
  *    초기: stack = [], removeCount = 0
- *    
+ *
  *    1. num = '1'
  *       - stack = ['1']
- *    
+ *
  *    2. num = '9'
  *       - stack.top = '1' < '9' → 1 제거!
  *       - removeCount = 1
  *       - stack = ['9']
- *    
+ *
  *    3. num = '2'
  *       - stack.top = '9' > '2' → 유지
  *       - stack = ['9', '2']
- *    
+ *
  *    4. num = '4'
  *       - stack.top = '2' < '4' → 2 제거!
  *       - removeCount = 2 (k와 같음)
  *       - stack = ['9', '4']
- *    
+ *
  *    결과: "94" ✨
  *
  * 7️⃣ 실수 주의
@@ -264,4 +264,3 @@ function solution(number: string, k: number): string {
  * - top과 현재 값을 비교하여 판단
  * - while로 조건 만족할 때까지 제거
  */
-
